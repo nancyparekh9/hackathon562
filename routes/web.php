@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
+
+Route::get('/scllogin', function () {
+    return view('scl_data/scl_login');
+});
+
+Route::post('/scllogin/submit', 'SclloginController@submit' );
