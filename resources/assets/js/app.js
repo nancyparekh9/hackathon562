@@ -7,10 +7,6 @@
 
 require('./bootstrap');
 
-require('./js/bin/materialize');
-require('./js/jquery.easing.1.4');
-require('./js/jquery.hammer');
-
 window.Vue = require('vue');
 
 /**
