@@ -24,7 +24,7 @@
                                             <input required id="Gr_No" name="Gr_No" type="text" autofocus  class="validate">
                                             <label for="Gr_No">Gr No</label>
                                         </div>
-                                        {{--  <div class="input-field col s6">
+                                        <div class="input-field col s6">
                                             <input required id="Aadhar_No"  onblur="adhar_validate()" name="Aadhar_No" type="text" autofocus  class="validate">
                                             <label for="Aadhar_No">Aadhar No</label><br>
                                         </div>
@@ -83,7 +83,7 @@
                                                 <option value="7">7</option>
                                                 <option value="8">8</option>
                                             </select>
-                                        </div>  --}}
+                                        </div>
                                     </div>
                                     <input class="btn waves-effect waves-light" type="submit"  name="submit" id="submit" value="Add Student" />
                                     <input class="btn waves-effect waves-light" type="reset"   name="reset" id="reset" value="Reset"  />
@@ -95,7 +95,7 @@
             </div>
         </div> 
     </div>
-    <script>
+    {{--  <script>
 			function contact_validate()
 			{
 				var a=document.getElementById("Contact_No").value;
@@ -168,7 +168,7 @@
            close: 'Ok',
            closeOnSelect: false // Close upon selecting a date,
          });
-           </script>    
+           </script>      --}}
 @endsection
 {{--  <script>
         window.onload = function() {

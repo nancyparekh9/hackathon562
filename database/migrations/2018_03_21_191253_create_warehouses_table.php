@@ -25,7 +25,7 @@ class CreateWarehousesTable extends Migration
             $table->string('Email_Id', 20);
             $table->boolean('Gender');
             $table->integer('Standard');
-            $table->double('Percentage', 3,2);
+            $table->double('Percentage', 5,2);
             $table->bigInteger('Ext_Academics');
             $table->bigInteger('Ext_Sports');   
             $table->bigInteger('Ext_Cultural');

@@ -6,21 +6,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\students;
 
-class StudentController extends Controller
+class AddStudentDetailsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-
     public function index()
-    {   
-        
+    {
         $students = students::all();
-        return view('scl_data.index')->with('students', $students);
-        
+        return view('scl_data.addStudentDetails')->with('students', $students);
     }
 
     /**
@@ -50,9 +46,10 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($Gr_No)
     {
-        
+        $students = students::find($Gr_No);
+        return view('scl_data.addDetail')->with('students', $students);
     }
 
     /**

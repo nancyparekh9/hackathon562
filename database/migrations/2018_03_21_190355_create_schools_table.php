@@ -21,10 +21,12 @@ class CreateSchoolsTable extends Migration
             $table->string('Email_Id', 20);
             $table->bigInteger('Phone_No');
             $table->boolean('School_Type');
+            $table->string('Password',100);
             $table->primary('Index_No');
             $table->index(['District','School_Type']);
             $table->index(['School_Type']);
             $table->index('School_Name');
+            $table->index('Password');
         });
     }
 

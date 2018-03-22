@@ -10,167 +10,85 @@
             <div class="container">
                 <div class="row">
                     <div class="col s12">
-                      <h1 class="mdc-card__title mdc-card__title--large">Student's Information</h1>
-                      
+                      <h2 class="header">Student's Information</h2>   
                       <div id="responsive" class="section scrollspy">
-                        <h2 class="header">Responsive Table</h2>
                         <div class="row">
                           <div class="col s12">
                             <div class="table-wrapper">
                               <table class="responsive-table highlight">
-                                  @foreach ($students as $student) {
-                                    echo $student->Gr_No;
-                                  }
                                 <thead>
                                   <tr>
-                                    <th>Gr_No</th>
-                                    <th>Index_No</th>
-                                    <th>Student_Name</th>
-                                    <th>Father_Name</th>
-                                    <th>Contact_No</th>
-                                    <th>DOB</th>
+                                    <th>Gr No</th>
+                                    <th>Index No</th>
+                                    <th>Student Name</th>
+                                    <th>Father Name</th>
+                                    <th>Contact No</th>
+                                    <th>Email Id</th>
+                                    <th>Birth Date</th>
                                     <th>Gender</th>
                                     <th>Standard</th>
                                     <th>Percentage</th>
-                                    <th>C_Percentage</th>
-                                    <th>Ext_Academics</th>
-                                    <th>C_Ext_Academics</th>
-                                    <th>Ext_Sports</th>
-                                    <th>Ext_Cultural</th>
-                                    <th>C_Ext_Cultural</th>
                                     <th>Status</th>
+                                    <th>Extea Details</th>
                                   </tr>
                                 </thead>
-                                {{--  <tbody>
+                                @if(count($students) > 0)
+                                    @foreach($students as $student)
+                                <tbody>
                                   <tr>
-                                    <td>Alvin</td>
-                                    <td>Eclair</td>
-                                    <td>$0.87</td>
-                                    <td>Alvin</td>
-                                    <td>Eclair</td>
-                                    <td>$0.87</td>
-                                    <td>Alvin</td>
-                                    <td>Eclair</td>
-                                    <td>$0.87</td>
-                                    <td>Alvin</td>
-                                    <td>Eclair</td>
-                                    <td>$0.87</td>
-                                    <td>Alvin</td>
-                                    <td>Eclair</td>
-                                    <td>$0.87</td>
-
-                                  </tr>
-                                  <tr>
-                                      <td>Alvin</td>
-                                      <td>Eclair</td>
-                                      <td>$0.87</td>
-                                      <td>Alvin</td>
-                                      <td>Eclair</td>
-                                      <td>$0.87</td>
-                                      <td>Alvin</td>
-                                      <td>Eclair</td>
-                                      <td>$0.87</td>
-                                      <td>Alvin</td>
-                                      <td>Eclair</td>
-                                      <td>$0.87</td>
-                                      <td>Alvin</td>
-                                      <td>Eclair</td>
-                                      <td>$0.87</td>
-                                      
+                                      <td>{{$student->Gr_No}}</td>
+                                      <td>{{$student->Index_No}}</td>
+                                      <td>{{$student->Student_Name}}</td>
+                                      <td>{{$student->Father_Name}}</td>
+                                      <td>{{$student->Contact_No}}</td>
+                                      <td>{{$student->Email_Id}}</td>
+                                      <td>{{$student->DOB}}</td>
+                                      <td>{{$student->Gender}}</td>
+                                      <td>{{$student->Standard}}</td>
+                                      <td>{{$student->Percentage}}</td>
+                                      <td>
+                                          <!-- Modal Trigger -->
+                                            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+    
+                                            <!-- Modal Structure -->
+                                            <div id="modal1" class="modal">
+                                              <div class="modal-content">
+                                                <h4>Modal Header</h4>
+                                                <table class="responsive-table highlight">
+                                                    <thead>
+                                                      <tr>
+                                                        <th>Avg-Percentage</th>
+                                                        <th>Academics</th>
+                                                        <th>Avg-Academics </th>
+                                                        <th>Sports</th>
+                                                        <th>Avg-Sports</th>
+                                                        <th>Cultural</th>
+                                                        <th>Avg-Cultural</th>
+                                                      </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>{{$student->C_Percentage}}</td>
+                                                            <td>{{$student->Ext_Academics}}</td>
+                                                            <td>{{$student->C_Ext_Academics}}</td>
+                                                        </tr>
+                                                      </tbody>
+                                                  </table>
+                                              </div>
+                                              <div class="modal-footer">
+                                                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                                              </div>
+                                            </div>
+                                        </td>
                                     </tr>
-                                    <tr>
-                                        <td>Alvin</td>
-                                        <td>Eclair</td>
-                                        <td>$0.87</td>
-                                        <td>Alvin</td>
-                                        <td>Eclair</td>
-                                        <td>$0.87</td>
-                                        <td>Alvin</td>
-                                        <td>Eclair</td>
-                                        <td>$0.87</td>
-                                        <td>Alvin</td>
-                                        <td>Eclair</td>
-                                        <td>$0.87</td>
-                                        <td>Alvin</td>
-                                        <td>Eclair</td>
-                                        <td>$0.87</td>
-                                        
-                                      </tr>
-                                      <tr>
-                                          <td>Alvin</td>
-                                          <td>Eclair</td>
-                                          <td>$0.87</td>
-                                          <td>Alvin</td>
-                                          <td>Eclair</td>
-                                          <td>$0.87</td>
-                                          <td>Alvin</td>
-                                          <td>Eclair</td>
-                                          <td>$0.87</td>
-                                          <td>Alvin</td>
-                                          <td>Eclair</td>
-                                          <td>$0.87</td>
-                                          <td>Alvin</td>
-                                          <td>Eclair</td>
-                                          <td>$0.87</td>
-                                          
-                                        </tr>
-                                        <tr>
-                                            <td>Alvin</td>
-                                            <td>Eclair</td>
-                                            <td>$0.87</td>
-                                            <td>Alvin</td>
-                                            <td>Eclair</td>
-                                            <td>$0.87</td>
-                                            <td>Alvin</td>
-                                            <td>Eclair</td>
-                                            <td>$0.87</td>
-                                            <td>Alvin</td>
-                                            <td>Eclair</td>
-                                            <td>$0.87</td>
-                                            <td>Alvin</td>
-                                            <td>Eclair</td>
-                                            <td>$0.87</td>
-                                            
-                                          </tr>
-                                          <tr>
-                                              <td>Alvin</td>
-                                              <td>Eclair</td>
-                                              <td>$0.87</td>
-                                              <td>Alvin</td>
-                                              <td>Eclair</td>
-                                              <td>$0.87</td>
-                                              <td>Alvin</td>
-                                              <td>Eclair</td>
-                                              <td>$0.87</td>
-                                              <td>Alvin</td>
-                                              <td>Eclair</td>
-                                              <td>$0.87</td>
-                                              <td>Alvin</td>
-                                              <td>Eclair</td>
-                                              <td>$0.87</td>
-                                              
-                                            </tr>
-                                  <tr>
-                                    <td>Alan</td>
-                                    <td>Jellybean</td>
-                                    <td>$3.76</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop</td>
-                                    <td>$7.00</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Shannon</td>
-                                    <td>KitKat</td>
-                                    <td>$9.99</td>
-                                  </tr>  --}}
-                                </tbody>
+                                  </tbody>
+                                  @endforeach
+                                  
+                                  @endif
                               </table>
                             </div>
                           </div>
                         </div>
-                        
                     </div>
                     </div>
                 </div>

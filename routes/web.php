@@ -20,17 +20,20 @@ Route::get('/scl/login', function () {
     return view('scl_data/scl_login');
 });
 
-Route::get('/scl/index', function () {
-    return view('scl_data/index');
-});
+Route::get('/scl/index', 'StudentController@Index' );
 
 Route::post('/scl/login/submit', 'LoginSclController@submit' );
+
+Route::get('/scl/addStudentDetails', 'AddStudentDetailsController@Index' );
 
 Route::get('/scl/addstudent', function () {
     return view('scl_data/addStudents');
 });
 
-Route::post('/scl/addstudent/submit', 'AddStudentController@submit' );
+Route::resource([
+    'addstudent', 'AddStudentController',
+    '',''
+]);
 
 
 // govt

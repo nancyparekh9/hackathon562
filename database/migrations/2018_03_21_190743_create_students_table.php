@@ -25,8 +25,8 @@ class CreateStudentsTable extends Migration
             $table->date('DOB');
             $table->boolean('Gender');
             $table->integer('Standard');
-            $table->double('Percentage', 3,2);
-            $table->double('C_Percentage', 3,2);
+            $table->double('Percentage', 5,2);
+            $table->double('C_Percentage', 5,2);
             $table->bigInteger('Ext_Academics');    
             $table->bigInteger('C_Ext_Academics');    
             $table->bigInteger('Ext_Sports');    
