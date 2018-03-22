@@ -18,7 +18,7 @@
 				                    <div>
 					                    <center><h4>Student Representative Login</h4></center>
 						                    <div class="row">
-											 <form class="col s8" method="POST" action="/scllogin/submit" style="margin-left:35%;">
+											 <form class="col s8" method="POST" action="/scl/login/submit" style="margin-left:35%;">
 											 {!! csrf_field() !!}
                                     				<div class="row">
 						                                <div class="input-field col s6">
