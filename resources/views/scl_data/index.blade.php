@@ -18,6 +18,9 @@
                           <div class="col s12">
                             <div class="table-wrapper">
                               <table class="responsive-table highlight">
+                                  @foreach ($students as $student) {
+                                    echo $student->Gr_No;
+                                  }
                                 <thead>
                                   <tr>
                                     <th>Gr_No</th>
@@ -38,7 +41,7 @@
                                     <th>Status</th>
                                   </tr>
                                 </thead>
-                                <tbody>
+                                {{--  <tbody>
                                   <tr>
                                     <td>Alvin</td>
                                     <td>Eclair</td>
@@ -161,7 +164,7 @@
                                     <td>Shannon</td>
                                     <td>KitKat</td>
                                     <td>$9.99</td>
-                                  </tr>
+                                  </tr>  --}}
                                 </tbody>
                               </table>
                             </div>

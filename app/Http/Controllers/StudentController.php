@@ -15,9 +15,10 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //$users = DB::select('select * from users where active = ?', [1]);
-        return dashboard::all();
-        return view('dashboard', ['users' => $users]);
+        
+        $students = students::all();
+        
+         return view('scl_data.index')->wth('students', $students);
     }
 
     /**
