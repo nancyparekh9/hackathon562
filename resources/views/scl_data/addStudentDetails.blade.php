@@ -17,7 +17,7 @@
                         <div class="row">          
                                 <div class="input-field col s3">
                                     <form action="#" method="GET">
-                                            <select name="ac" id="ac" onchange="this.form.submit();">
+                                            <select class="browser-default" name="ac" id="ac" onchange="this.form.submit();">
                                                 <option  value="" ,id="val">Select Standard</option>
                                                 <option  value="1" ,id="val">1</option>
                                                 <option  value="2",id="val">2</option>
@@ -28,7 +28,6 @@
                                                 <option  value="7",id="val">7</option>
                                                 <option  value="8",id="val">8</option>	
                                                 </select>
-                                                <label>Select Standard</label>
                                     </form>
                                 </div>
                             </div>
@@ -47,10 +46,11 @@
                                                 @foreach($students as $student)
                                                     <tbody>
                                                         <tr>
-                                                            <td>{{$student->Gr_No}}</td>
+                                                            
+                                                            <td>{{$p=$student->Gr_No}}</td>
                                                             <td>{{$student->Index_No}}</td>
                                                             <td>{{$student->Student_Name}}</td>
-                                                            <td><a class="waves-effect waves-light btn" href="/scl/addStudentDetails/{{$student->Gr_No}}">button</a></  td>
+                                                            <td><a class="waves-effect waves-light btn" href="/scl/addStudentDetails/{{$p}}">button</a></td>
                                                         </tr>
                                                     </tbody>
                                                 @endforeach
