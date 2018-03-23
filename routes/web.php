@@ -24,16 +24,19 @@ Route::get('/scl/index', 'StudentController@Index' );
 
 Route::post('/scl/login/submit', 'LoginSclController@submit' );
 
-Route::get('/scl/addStudentDetails', 'AddStudentDetailsController@Index' );
-
-Route::get('/scl/addstudent', function () {
+Route::get('/scl/addstudents', function () {
     return view('scl_data/addStudents');
 });
 
-Route::resource([
-    'addstudent', 'AddStudentController',
-    '',''
-]);
+Route::post('/scl/addstudents/submit','AddStudentDetailsController@submit');
+
+
+Route::resource('students', 'AddStudentController');
+
+Route::get('scl/addStudentDetails', 'AddStudentDetailsController@showStudents');
+
+
+Route::get('/scl/addStudentDetails/{Gr_No}',['uses' =>'AddStudentDetailsController@addStudents']);
 
 
 // govt

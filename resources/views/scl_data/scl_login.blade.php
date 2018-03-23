@@ -16,18 +16,23 @@
                             <div class="card-content">
 		                        <span class="card-title"> 
 				                    <div>
+											@if(session('success'))
+											<div class="card red">{{session('success')}}</div>
+										@endif
+									@include('inc.message')
+						
 					                    <center><h4>Student Representative Login</h4></center>
 						                    <div class="row">
 											 <form class="col s8" method="POST" action="/scl/login/submit" style="margin-left:35%;">
 											 {!! csrf_field() !!}
                                     				<div class="row">
 						                                <div class="input-field col s6">
-						                                    <input id="percentage" type="text" name="username" class="validate">
-						                                    <label for="name">User Name</label>
+						                                    <input id="emailid" type="text" name="emailid" class="validate">
+						                                    <label for="name">Email Id</label>
 						                                </div><br><br><br>
 						                                <div class="input-field col s6">
-						                                    <input id="last_name" type="password" name="password" class="validate">
-						                                    <label for="last_name">Password</label>
+						                                    <input id="password" type="password" name="password" class="validate">
+						                                    <label for="password">Password</label>
                                                         </div><br><br><br>
                                                         <button class="btn waves-effect waves-light blue" type="submit" value="Login">Submit
                                                             <i class="material-icons right">send</i>

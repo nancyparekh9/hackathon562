@@ -5,9 +5,11 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+require('./js/bin/materialize');
 
-window.Vue = require('vue');
+ require('./bootstrap');
+
+ Vue.use(Bootstrap);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
