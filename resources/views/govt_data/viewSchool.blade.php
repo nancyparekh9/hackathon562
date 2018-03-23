@@ -1,24 +1,3 @@
-<!--<!DOCTYPE html>
-<?php
-//include("conn.php");
-	//session_start();
- 
-?>
-<html lang="en">
-<head>
-     
-     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-     
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-
-     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-     <title>View School</title>
-	 
-
-   </head>
-<body>
-     <?php //include("header.php");?>
-    -->
 @extends('layouts.app')
 
 @section('sidebar')
@@ -40,9 +19,8 @@
 								</select>
 								<label>Select Type</label>
 							</div>  
-  
-
-						</form>
+                    </form>
+                    
 						<form action="">
 							<div class="input-field col s3">
 								<select name="District"  onchange="showUser1(this.value)"> 

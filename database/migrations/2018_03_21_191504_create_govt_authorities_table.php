@@ -18,6 +18,8 @@ class CreateGovtAuthoritiesTable extends Migration
             $table->string('G_Name', 50);
             $table->string('G_Email', 20);
             $table->string('G_Password', 20);
+            $table->rememberToken();
+            $table->timestamps();
             $table->primary('G_Index');
         });
     }

@@ -21,6 +21,8 @@ class CreateSchoolRepresentativesTable extends Migration
             $table->bigInteger('Phone_No');
             $table->primary('Index_No');
             $table->index(['R_Email','R_Password']);
+            $table->rememberToken();
+            $table->timestamps();
             $table->foreign('Index_No')
                   ->references('Index_No')->on('schools')
                   ->onDelete('cascade')
