@@ -14,41 +14,48 @@
 Route::get('/', function () {
     return view('dashboard');
 });
-
-//school register
+//about us
+Route::get('/dashboard/aboutus', function () {
+    return view('aboutpage');
+});
+//register school representative
+Route::get('/scl/registerrep', function () {
+    return view('scl_data/addSchool');
+});
+//submit school representative
 Route::post('/sclregister/submit','SclRepRegisterController@submit');
 
-// scl
+// scl representative login page
 Route::get('/scl/login', function () {
     return view('scl_data/scl_login');
 });
 
-Route::get('/scl/index', 'StudentController@Index' );
-
+//submit school login page
 Route::post('/scl/login/submit', 'LoginSclController@submit' );
 
+//school view student
+Route::get('/scl/index', 'StudentController@Index' );
+
+//school add student page
 Route::get('/scl/addstudents', function () {
     return view('scl_data/addStudents');
 });
-Route::get('/scl/registerrep', function () {
-    return view('scl_data/addSchool');
-});
-Route::post('/scl/addstudents/submit','AddStudentsController@submit');
 
+//school add student submit
+Route::post('/scl/addstudents/submit','AddStudentDetailsController@submit');
 
-
-
-
+//school update student details
 Route::get('scl/addStudentDetails', 'AddStudentDetailsController@showStudents');
 
-
+//school update student pass value to modal
 Route::get('/scl/addStudentDetails/{Gr_No}',['uses' =>'AddStudentDetailsController@addStudents']);
 
-
-
+//school lock data
 Route::post('/scl/index/lockdata','LockDataController@lockdata');
 
+//school view meritorious
 Route::post('/govt/viewmeritorious/filter','ViewMeritoriousFilter@filter');
+
 
 Route::post('/govt/viewschool/filter','ViewschoolController@filter');
 
