@@ -25,10 +25,10 @@ class CreateWarehousesTable extends Migration
             $table->string('Email_Id', 20);
             $table->boolean('Gender');
             $table->integer('Standard');
-            $table->double('Percentage', 5,2);
-            $table->bigInteger('Ext_Academics');
-            $table->bigInteger('Ext_Sports');   
-            $table->bigInteger('Ext_Cultural');
+            $table->double('Percentage', 5,2)->nullable();
+            $table->bigInteger('Ext_Academics')->nullable();
+            $table->bigInteger('Ext_Sports')->nullable();   
+            $table->bigInteger('Ext_Cultural')->nullable();
             $table->primary(['Index_No','Gr_No','Standard']);
             $table->unique('Aadhar_No','Standard');
             $table->index('Percentage');

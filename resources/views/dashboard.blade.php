@@ -9,11 +9,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col s12">
+
                         <h1><b>dashboard</b></h1>
+
+ 
                     </div>
-                </div>
-            </div>
-            <div class="input-field col s12">
                     <select>
                       <option value="" disabled selected>Choose your option</option>
                       <option value="1">Option 1</option>

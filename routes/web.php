@@ -27,7 +27,9 @@ Route::post('/scl/login/submit', 'LoginSclController@submit' );
 Route::get('/scl/addstudents', function () {
     return view('scl_data/addStudents');
 });
-
+Route::get('/scl/registerrep', function () {
+    return view('scl_data/addSchool');
+});
 Route::post('/scl/addstudents/submit','AddStudentDetailsController@submit');
 
 

@@ -25,15 +25,18 @@ class CreateStudentsTable extends Migration
             $table->date('DOB');
             $table->boolean('Gender');
             $table->integer('Standard');
-            $table->double('Percentage', 5,2);
-            $table->double('C_Percentage', 5,2);
-            $table->bigInteger('Ext_Academics');    
-            $table->bigInteger('C_Ext_Academics');    
-            $table->bigInteger('Ext_Sports');    
-            $table->bigInteger('C_Ext_Sports');    
-            $table->bigInteger('Ext_Cultural');
-            $table->bigInteger('C_Ext_Cultural');
-            $table->boolean('Status');
+            $table->double('Percentage', 5,2)->nullable();
+            $table->double('C_Percentage', 5,2)->nullable();
+            $table->bigInteger('Ext_Academics')->nullable();    
+            $table->bigInteger('C_Ext_Academics')->nullable();    
+            $table->bigInteger('Ext_Sports')->nullable();    
+            $table->bigInteger('C_Ext_Sports')->nullable();    
+            $table->bigInteger('Ext_Cultural')->nullable();
+            $table->bigInteger('C_Ext_Cultural')->nullable();
+            $table->boolean('Status')->nullable();
+            $table->string('Earning_Member')->nullable();
+            $table->bigInteger('Income')->nullable();
+            $table->bigInteger('PAN_No')->nullable();
 
             $table->primary(['Index_No','Gr_No']);
             $table->unique(['Aadhar_No']);
