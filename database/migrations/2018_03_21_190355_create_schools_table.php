@@ -18,9 +18,9 @@ class CreateSchoolsTable extends Migration
             $table->string('School_Name', 30);
             $table->string('School_Address', 50);
             $table->string('District', 20);
-            $table->string('Email_Id', 20);
-            $table->bigInteger('Phone_No');
-            $table->boolean('School_Type');
+            $table->string('Email_Id', 20)->nullable();
+            $table->bigInteger('Phone_No')->nullable();
+            $table->boolean('School_Type')->nullable();
             $table->string('Password',100);
             $table->primary('Index_No');
             $table->index(['District','School_Type']);
