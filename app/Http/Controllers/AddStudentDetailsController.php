@@ -29,11 +29,11 @@ class AddStudentDetailsController extends Controller
             $r = DB::insert('INSERT INTO students (Index_No,Gr_No,Aadhar_No,Student_Name,Father_Name,Mother_Name,Contact_No,Email_Id,DOB,Gender,Standard,Earning_Member,Income,PAN_No)
             VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)',['GJ00JKOG',$request->Gr_No,$request->Aadhar_No,$request->Student_Name,
             $request->Father_Name,$request->Mother_Name,$request->Contact_No,$request->Email_Id,
-            $request->DOB,$request->Gender,$request->Standard,$request->Guardian,$request->Income,$request->PAN_No]);
+            $request->DOB,$request->Gender,$request->Standard,$request->Income,$request->PAN_No]);
         }
         else{
             $r = DB::insert('INSERT INTO students (Index_No,Gr_No,Aadhar_No,Student_Name,Father_Name,Mother_Name,Contact_No,Email_Id,DOB,Gender,Standard,Earning_Member,Income,PAN_No)
-            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)',['GJ00JKOG',$request->Gr_No,$request->Aadhar_No,$request->Student_Name,
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)',['GJ00DGCT',$request->Gr_No,$request->Aadhar_No,$request->Student_Name,
             $request->Father_Name,$request->Mother_Name,$request->Contact_No,$request->Email_Id,
             $request->DOB,$request->Gender,$request->Standard,$request->Parent,$request->Income,$request->PAN_No]);
         }
