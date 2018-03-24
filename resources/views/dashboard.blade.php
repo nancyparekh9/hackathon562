@@ -9,6 +9,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col s12">
+
+                        <h1><b>dashboard</b></h1>
+
+ 
                     </div>
                     <select>
                       <option value="" disabled selected>Choose your option</option>

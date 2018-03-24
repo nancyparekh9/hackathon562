@@ -34,6 +34,9 @@ class CreateStudentsTable extends Migration
             $table->bigInteger('Ext_Cultural')->nullable();
             $table->bigInteger('C_Ext_Cultural')->nullable();
             $table->boolean('Status')->nullable();
+            $table->string('Earning_Member')->nullable();
+            $table->bigInteger('Income')->nullable();
+            $table->bigInteger('PAN_No')->nullable();
 
             $table->primary(['Index_No','Gr_No']);
             $table->unique(['Aadhar_No']);
