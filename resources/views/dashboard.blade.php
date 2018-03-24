@@ -9,13 +9,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col s12">
-<<<<<<< HEAD
 
                         <h1><b>dashboard</b></h1>
 
  
-=======
->>>>>>> c14c020e75fe2c8684af172cd03e4e6ca0c52890
                     </div>
                     <select>
                       <option value="" disabled selected>Choose your option</option>
