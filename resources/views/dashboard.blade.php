@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col s12">
 
-                        <h1><b>dashboard</b></h1>
+                        <h1><b>dashboard1</b></h1>
 
  
                     </div>
