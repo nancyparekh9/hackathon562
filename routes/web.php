@@ -31,7 +31,8 @@ Route::get('/scl/addstudents', function () {
 Route::post('/scl/addstudents/submit','AddStudentDetailsController@submit');
 
 
-Route::resource('students', 'AddStudentController');
+
+
 
 Route::get('scl/addStudentDetails', 'AddStudentDetailsController@showStudents');
 
@@ -46,9 +47,15 @@ Route::post('/govt/viewmeritorious/filter','ViewMeritoriousFilter@filter');
 
 Route::post('/govt/viewschool/filter','ViewschoolController@filter');
 
+Route::prefix('govt')->group(function(){
+    Route::get('/login','Auth\GovtLoginController@showLoginForm')->name('govt.login');
+    Route::post('/login1','Auth\GovtLoginController@login')->name('govt.login.submit');
+    Route::get('/', 'AuthGovtController@index')->name('Govt');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/govt', 'AuthGovtController@index')->name('govt');
-Route::get('/Repsresentative', 'AuthRepresentativeController@index')->name('Repsresentative');
+Route::get('/govt', 'AuthGovtController@index')->name('govtAuthorities');
+Route::get('/rep', 'AuthRepresentativeController@index')->name('school_representatives');

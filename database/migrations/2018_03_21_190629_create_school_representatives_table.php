@@ -17,10 +17,10 @@ class CreateSchoolRepresentativesTable extends Migration
             $table->string('Index_No', 20);
             $table->string('R_Name', 30);
             $table->string('R_Email', 50);
-            $table->string('R_Password', 20);
+            $table->string('password', 20);
             $table->bigInteger('Phone_No');
             $table->primary('Index_No');
-            $table->index(['R_Email','R_Password']);
+            $table->index(['R_Email','password']);
             $table->rememberToken();
             $table->timestamps();
             $table->foreign('Index_No')

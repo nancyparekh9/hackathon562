@@ -8,6 +8,8 @@ class govtAuthorities extends Authenticatable
 {
     use Notifiable;
 
+    protected $guard = 'govtAuthorities';
+
     /**
      * The attributes that are mass assignable.
      *

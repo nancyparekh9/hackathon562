@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\students;
+
 use Illuminate\Http\Request;
+// change  per table model
 use DB;
+use App\students;
 
 class AddStudentDetailsController extends Controller
 {

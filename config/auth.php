@@ -14,8 +14,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
+        'guard' => 'govtAuthorities',
+        'passwords' => 'govtAuthorities',
     ],
 
     /*
@@ -36,14 +36,23 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        'school_representatives' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'school_representatives',
         ],
 
-        'api' => [
+        'srapi' => [
             'driver' => 'token',
-            'provider' => 'users',
+            'provider' => 'school_representatives',
+        ],
+        'govtAuthorities' => [
+            'driver' => 'session',
+            'provider' => 'govtAuthorities',
+        ],
+
+        'gapi' => [
+            'driver' => 'token',
+            'provider' => 'govtAuthorities',
         ],
     ],
 
@@ -65,15 +74,18 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'school_representatives' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\school_representatives::class,
         ],
+        'govtAuthorities' => [
+            'driver' => 'eloquent',
+            'model' => App\govtAuthorities::class,
 
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
-        // ],
+        ],
     ],
 
     /*
@@ -92,10 +104,15 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'school_representatives' => [
+            'provider' => 'school_representatives',
             'table' => 'password_resets',
             'expire' => 60,
+        ],
+        'govtAuthorities' => [
+            'provider' => 'govtAuthorities',
+            'table' => 'password_resets',
+            'expire' => 10,
         ],
     ],
 
