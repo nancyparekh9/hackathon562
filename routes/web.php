@@ -33,7 +33,7 @@ Route::get('/scl/addstudents', function () {
 Route::get('/scl/registerrep', function () {
     return view('scl_data/addSchool');
 });
-Route::post('/scl/addstudents/submit','AddStudentDetailsController@submit');
+Route::post('/scl/addstudents/submit','AddStudentsController@submit');
 
 
 
