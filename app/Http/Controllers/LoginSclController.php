@@ -16,7 +16,7 @@ class LoginSclController extends Controller
         
         if(count($request->emailid)>0);
             {
-              $checklogin = DB::select( DB::raw("SELECT * FROM `school_representatives` WHERE R_Email = '$request->emailid' AND R_Password='$request->password'") );
+              $checklogin = DB::select( DB::raw("SELECT * FROM `school_representatives` WHERE R_Email = '$request->emailid' AND password='$request->password'") );
             }
         if(count($checklogin)>0)
         {

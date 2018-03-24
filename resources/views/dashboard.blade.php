@@ -1,40 +1,23 @@
 @extends('layouts.app')
 
-@section('sidebar')
+ @section('sidebar')
             @parent
 @endsection
     
-<!--><-->
 @section('content')
-            <div class="container">
+        
+	
+				<div class="container">
                 <div class="row">
-                    <div class="col s12">
-
-<<<<<<< HEAD
-                        <h1><b>dashboard1</b></h1>
-=======
-                        <h1><b>dashboard</b></h1>
->>>>>>> nancy
-
- 
-                    </div>
-                    <select>
-                      <option value="" disabled selected>Choose your option</option>
-                      <option value="1">Option 1</option>
-                      <option value="2">Option 2</option>
-                      <option value="3">Option 3</option>
-                    </select>
-                    <label>Materialize Select</label>
-                  </div>
-@endsection
-<script>
-           window.onload = function() {
-    if (window.jQuery) {  
-        // jQuery is loaded  
-        alert("Yeah!");
-    } else {
-        // jQuery is not loaded
-        alert("Doesn't Work");
-    }
-}
-</script>
+                <div class="col s12">
+                <div id="main" class="card">
+                <div class="card-content">
+                <span class="card-title"> 
+                <h1 align=center><b>Dashboard</b></h1>
+                </span>
+                </div>
+                </div>
+                </div>
+                </div>
+				</div>
+                @endsection

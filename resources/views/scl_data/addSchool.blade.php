@@ -23,7 +23,7 @@
 										@endif
                         <h4>School's Information</h4>
 							<div class="row">
-								<form class="col s12" action="/sclregister/submit" id="form1" name=	"form1" method="post">
+								<form class="col s12" action="/sclregister/submit" id="form1" name=	"form1" method="POST">
 									<div class="row">
 										<div class="input-field col s6">
 											<input required id="Index_No" name="Index_No" type="text" autofocus class="validate">
