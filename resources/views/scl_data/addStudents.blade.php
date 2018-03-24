@@ -95,7 +95,7 @@
                                               <option value="" disabled selected>Select Standard</option>
                                               <option value="1">1</option>
                                               <option value="2">2</option>
-                                              <option value="3">3</option>
+                                       .       <option value="3">3</option>
                                               <option value="4">4</option>
                                               <option value="5">5</option>
                                               <option value="6">6</option>
@@ -123,9 +123,15 @@
                                     </div>
                                     </div>
                                     <div class="row">
-                                    <label for="Pan">Pan Card No.</label> 
+                                    <div class="input-field col s6">
+                                    <label for="Pan" >Pan Card No.</label> 
                                     <input required id="Pan" onfocus=document.getElementById("Pan").value="" name="Pan" type="text" autofocus  class="validate">     
-                                     </div>
+                                    </div>
+                                    <div class="input-field col s6">
+                                    <label for="Income" >Guardian Income</label> 
+                                    <input required id="Income" onblur="isNumeric()"name="Income" type="text" autofocus  class="validate">     
+                                    </div>
+                                    </div>
                                     <input class="btn waves-effect waves-light" type="submit"  name="submit" id="submit" value="Add Student" />
                                   </form>
                             </div>
@@ -137,13 +143,14 @@
     </div>
   <script>
 
-function yesnoCheck(that) {
-      if (that.value == "other") {
-      document.getElementById("ifYes").style.display = "block";
-     } else {
-       document.getElementById("ifYes").style.display = "none";
-      }
-}
+
+        function yesnoCheck(that) {
+            if (that.value == "other") {
+            document.getElementById("ifYes").style.display = "block";
+            } else {
+            document.getElementById("ifYes").style.display = "none";
+            }
+        }
         function aadhar_validate()
         {
             var a=document.getElementById("Aadhar_No").value;
@@ -161,6 +168,20 @@ function yesnoCheck(that) {
             }
                 
         }
+        function isNumeric()
+        {
+            a=document.getElementById("Income").value;
+            if(a.match( /^\d+(?:\.\d{0,2})$/))
+            {
+                document.getElementById("Income").style.borderColor="green";
+            }	
+            else
+            {
+                
+                document.getElementById("Income").style.borderColor="red";
+                document.getElementById("Income").placeholder="\t\t\tPlease enter a valid Income";
+            }
+        } 
     
         function name_validate(a)
 			{
@@ -183,7 +204,7 @@ function yesnoCheck(that) {
                 var a=document.getElementById("Contact_No").value;
                 var len=a.length;
                 
-              if(a.match(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/)&&len==10)
+              if(a.match(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/))
                     {
                   document.getElementById("Contact_No").style.borderColor="green";
                     }
