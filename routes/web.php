@@ -10,10 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//dashboard
 Route::get('/', function () {
     return view('dashboard');
 });
+
+//school register
+Route::post('/sclregister/submit','SclRepRegisterController@submit');
 
 // scl
 Route::get('/scl/login', function () {
@@ -38,7 +41,7 @@ Route::get('scl/addStudentDetails', 'AddStudentDetailsController@showStudents');
 
 Route::get('/scl/addStudentDetails/{Gr_No}',['uses' =>'AddStudentDetailsController@addStudents']);
 
-Route::post('/sclregister/submit','SclRepRegisterController@submit');
+
 
 Route::post('/scl/index/lockdata','LockDataController@lockdata');
 
