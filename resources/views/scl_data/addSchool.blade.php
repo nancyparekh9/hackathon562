@@ -1,16 +1,29 @@
+@extends('layouts.app')
+
+@section('sidebar')
+            @parent
+@endsection
+    
+
+
+
 @section('content')
 	<div class="container">
 		<div class="row">
             <div class="col s12">
                 <div id="main" class="card">
                     <div class="card-content">
+					
                         <span class="card-title"> 
 								<h2><b>School Registration</b></h2>
                         </span>
                         <div>
+						@if(session('success'))
+											<div class="card red">{{session('success')}}</div>
+										@endif
                         <h4>School's Information</h4>
 							<div class="row">
-								<form class="col s12" action="addSchools.php" id="form1" name=	"form1" method="post">
+								<form class="col s12" action="/sclregister/submit" id="form1" name=	"form1" method="post">
 									<div class="row">
 										<div class="input-field col s6">
 											<input required id="Index_No" name="Index_No" type="text" autofocus class="validate">
@@ -75,11 +88,13 @@
 				if(a.match(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/)&&len==10)
 				{
 				  document.getElementById("Mobile_No").style.borderColor="green";
+				  document.getElementById("submit").disabled=false;
 				}
 				 else
 				{
 					document.getElementById("Mobile_No").style.borderColor="red";
-					document.getElementById("Mobile_No").value="\t\t\tPlease enter a valid Contact number";
+					document.getElementById("Mobile_No").placeholder="\t\t\tPlease enter a valid Contact number";
+					document.getElementById("submit").disabled=true;
 				} 
 		}
 		function mail_validate()
@@ -88,11 +103,13 @@
 			if(a.match(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/))
 			{
 				 document.getElementById("Email_Id").style.borderColor="green";
+				 document.getElementById("submit").disabled=false;
 			}
 			 else
 			{
 				document.getElementById("Email_Id").style.borderColor="red";
-				document.getElementById("Email_Id").value="\t\t\t Please enter a valid Email ID";
+				document.getElementById("Email_Id").placeholder="\t\t\t Please enter a valid Email ID";
+				document.getElementById("submit").disabled=true;
 			} 
 		}
 		
@@ -102,38 +119,19 @@
 			if(b.match(/^[A-Za-z\s]+$/))
 			{
 				a.style.borderColor="green";
+				document.getElementById("submit").disabled=false;
 			}	
 			else
 			{
 																				
 					a.style.borderColor="red";
-					a.value="\t\t\t\t  Please enter a valid Name";
+					a.placeholder="\t\t\t\t\t Please enter a valid Name";
+					document.getElementById("submit").disabled=true;
 				}
 																				
 		}
 		
-		(function() 
-		{
-				$('form > input').keyup(function()
-				{
-					var empty = false;
-					$('form > input').each(function()
-					{
-						if ($(this).val() == '') {
-							empty = true;
-						}
-					});
-
-					if (empty)
-					{
-						$('#register').attr('disabled', 'disabled');
-					} 
-					else 
-					{
-						$('#submit').removeAttr('disabled');
-					}
-				});
-		})()
+		
        $(".button-collapse").sideNav();
 
         // Init Sidenav
