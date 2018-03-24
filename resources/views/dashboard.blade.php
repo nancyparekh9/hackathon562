@@ -9,15 +9,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col s12">
-<<<<<<< HEAD
-                        <h1><b>dashboard</b></h1>
-=======
-                        <h1><b>nanu</b></h1>
->>>>>>> nancy
                     </div>
-                </div>
-            </div>
-            <div class="input-field col s12">
                     <select>
                       <option value="" disabled selected>Choose your option</option>
                       <option value="1">Option 1</option>
