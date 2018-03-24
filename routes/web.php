@@ -38,28 +38,17 @@ Route::get('scl/addStudentDetails', 'AddStudentDetailsController@showStudents');
 
 Route::get('/scl/addStudentDetails/{Gr_No}',['uses' =>'AddStudentDetailsController@addStudents']);
 
+Route::post('/sclregister/submit','SclRepRegisterController@submit');
 
-// govt
-// Route::get('/govt/login', function () {
-//     return view('govt_data/logingovt');
-// });
+Route::post('/scl/index/lockdata','LockDataController@lockdata');
 
-// Route::get('/govt/dashboard', function () {
-//     return view('govt_data/dashboard');
-// });
+Route::post('/govt/viewmeritorious/filter','ViewMeritoriousFilter@filter');
 
-// Route::get('/govt/viewSchool', function () {
-//     return view('govt_data/viewSchool');
-// });
+Route::post('/govt/viewschool/filter','ViewschoolController@filter');
 
-// Route::get('/govt/ViewMeritorious', function () {
-//     return view('govt_data/ViewMeritoriousStudent');
-// });
+Auth::routes();
 
-// Route::get('/govt/showFilteredSchools', function () {
-//     return view('govt_data/showFilteredSchools');
-// });
+Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::get('/govt/showschools', function () {
-//     return view('govt_data/showAllSchools');
-// });
+Route::get('/govt', 'AuthGovtController@index')->name('govt');
+Route::get('/Repsresentative', 'AuthRepresentativeController@index')->name('Repsresentative');
