@@ -9,11 +9,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col s12">
-<<<<<<< HEAD
+
                         <h1><b>dashboard</b></h1>
-=======
-                        <h1><b>nanu</b></h1>
->>>>>>> nancy
+
+ 
                     </div>
                 </div>
             </div>
